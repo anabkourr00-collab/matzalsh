@@ -2,176 +2,341 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-<meta name="theme-color" content="#ff69ad">
-<title>رسالة حلوة 💗</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#ff4fa3">
+<title>رسالة من القلب 💗</title>
 <style>
-*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif}
-body{overflow-x:hidden;background:linear-gradient(135deg,#ffd8ec,#d9e8ff 48%,#f4d9ff);color:#633c67}
-.sky{position:fixed;inset:0;z-index:-5;overflow:hidden;background:radial-gradient(circle at 20% 20%,#fff 0 2%,transparent 14%),linear-gradient(135deg,#ffc5e1,#cfe2ff 50%,#efd2ff)}
-.cloud{position:absolute;width:180px;height:65px;background:#fff8ffb8;border-radius:60px;filter:blur(1px);animation:drift 22s linear infinite}
-.cloud:before,.cloud:after{content:"";position:absolute;background:#fff8ff;border-radius:50%}.cloud:before{width:75px;height:75px;right:30px;top:-35px}.cloud:after{width:55px;height:55px;left:30px;top:-20px}
-.c1{top:10%;left:-200px}.c2{top:54%;left:-250px;animation-duration:30s;animation-delay:-9s;transform:scale(.75)}
-@keyframes drift{to{transform:translateX(125vw)}} 
-.float{position:absolute;animation:float 5s ease-in-out infinite;user-select:none}
-.teddy{font-size:65px}.bird{font-size:42px}.gift{font-size:52px}
-@keyframes float{50%{transform:translateY(-24px) rotate(4deg)}}
-.decor{position:fixed;inset:0;z-index:-2;pointer-events:none}
-.spark{position:absolute;animation:fall linear infinite;opacity:.75}
-@keyframes fall{from{transform:translateY(-10vh) rotate(0)}to{transform:translateY(115vh) rotate(360deg)}}
-.wrap{width:min(680px,92vw);margin:auto;padding:28px 0 55px}
-.card{background:#ffffffc9;backdrop-filter:blur(16px);border:2px solid #fff8;border-radius:30px;box-shadow:0 20px 60px #9e5b9c2b;padding:25px}
-.logo{text-align:center;font-size:48px}.title{text-align:center;font-size:30px;margin:4px 0 8px;color:#ec4d9a;font-weight:900}
-.sub{text-align:center;line-height:1.8;color:#765b7b}
-label{display:block;margin:15px 0 7px;font-weight:800}
-input,select{width:100%;border:2px solid #f1b8d8;background:#fff9;border-radius:17px;padding:14px 16px;font-size:16px;outline:none;color:#633c67}
-input:focus,select:focus{border-color:#ee63a8;box-shadow:0 0 0 4px #ff8fc833}
+:root{
+ --pink:#ff4f9e;--pink2:#ff79b7;--blue:#91b8ff;--purple:#8d76e8;
+ --ink:#513b61;--glass:rgba(255,255,255,.72);--line:rgba(255,255,255,.82);
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font-family:Tahoma,"Segoe UI",system-ui,sans-serif;color:var(--ink)}
+body{overflow-x:hidden;background:#d9dfff}
+button,input,select{font:inherit}
+button{border:0;cursor:pointer}
+.scene{
+ position:fixed;inset:0;overflow:hidden;z-index:-10;
+ background:
+ radial-gradient(circle at 20% 18%,#fff8ff 0 2%,transparent 22%),
+ radial-gradient(circle at 83% 30%,#fff2fb 0 2%,transparent 20%),
+ linear-gradient(135deg,#ffbedf 0%,#d3e5ff 48%,#dfc9ff 100%);
+}
+.scene:before{
+ content:"";position:absolute;inset:-20%;
+ background:
+ radial-gradient(ellipse at 25% 45%,rgba(255,255,255,.9) 0 4%,transparent 16%),
+ radial-gradient(ellipse at 72% 72%,rgba(255,255,255,.65) 0 4%,transparent 18%);
+ filter:blur(22px);animation:cloudMove 18s ease-in-out infinite alternate;
+}
+@keyframes cloudMove{to{transform:translate(5%, -3%) scale(1.06)}}
+.decor{position:fixed;inset:0;pointer-events:none;z-index:-1}
+.deco{position:absolute;animation:fly 7s ease-in-out infinite}
+@keyframes fly{50%{transform:translateY(-24px) rotate(5deg)}}
+.petal{position:absolute;animation:rain linear infinite;opacity:.8}
+@keyframes rain{from{transform:translateY(-10vh) rotate(0)}to{transform:translateY(115vh) rotate(280deg)}}
+
+.app{width:min(560px,94vw);margin:auto;padding:12px 0 42px}
+.top{
+ display:flex;align-items:center;justify-content:space-between;
+ padding:4px 3px 12px;color:#fff
+}
+.brand{font-weight:900;font-size:17px;text-shadow:0 2px 10px #7e5a8a55}
+.iconbtn{
+ width:42px;height:42px;border-radius:15px;background:#ffffff38;color:white;
+ backdrop-filter:blur(10px);font-size:20px;box-shadow:0 6px 20px #74507c22
+}
+.screen{display:none;animation:in .38s ease}.screen.active{display:block}
+@keyframes in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.card{
+ background:linear-gradient(145deg,rgba(255,255,255,.82),rgba(255,241,251,.67));border:2px solid rgba(255,255,255,.9);border-radius:28px;
+ padding:25px;box-shadow:0 25px 70px #754a8d2d;backdrop-filter:blur(20px)
+}
+.hero{text-align:center;padding:12px 12px 25px}
+.hero-art{font-size:78px;line-height:1.1;margin:0 0 10px;filter:drop-shadow(0 10px 14px rgba(100,65,120,.16))}
+h1{font-size:32px;margin:0 0 8px;color:#ef3f91;font-weight:950;letter-spacing:-.4px}
+h2{font-size:23px;margin:0 0 10px}
+.sub{text-align:center;line-height:1.85;color:#705875;font-size:14px}
+.primary{
+ width:100%;margin-top:19px;padding:15px 18px;border-radius:19px;
+ color:white;font-weight:900;font-size:16px;
+ background:linear-gradient(135deg,#ff3f96,#a277ed);
+ box-shadow:0 11px 25px #e45a9d44
+}
+.secondary{background:#ffffff99;color:#7a5a87;border:1px solid #fff}
+label{display:block;font-size:13px;font-weight:900;margin:15px 0 7px}
+input,select{
+ width:100%;padding:14px 15px;border-radius:17px;border:2px solid #f2c0dc;
+ outline:0;background:#fff9;color:#5d4167
+}
+input:focus,select:focus{border-color:#f05ba4;box-shadow:0 0 0 4px #ff72b42b}
 .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-button{border:0;border-radius:18px;padding:15px 20px;font-size:17px;font-weight:900;cursor:pointer;color:white;background:linear-gradient(135deg,#ff4f9e,#a974f5);box-shadow:0 9px 22px #db62a44a}
-button:active{transform:scale(.98)}.wide{width:100%;margin-top:20px}
-.hidden{display:none!important}
-.choice{display:flex;gap:10px}.choice button{flex:1}.choice button.alt{background:linear-gradient(135deg,#7baef8,#8c7be8)}
-.linkbox{margin-top:18px;background:#fff9;border-radius:18px;padding:12px;word-break:break-all;font-size:13px}
-.copy{margin-top:10px;background:#8f78e9}
-.small{text-align:center;font-size:13px;opacity:.8;margin-top:12px}
-#reveal{text-align:center}.present{font-size:100px;animation:bounce 1.5s infinite;cursor:pointer}
-@keyframes bounce{50%{transform:translateY(-12px) rotate(3deg)}}
-.message{background:#fff9;border-radius:24px;padding:22px;margin-top:15px;font-size:23px;line-height:1.9;font-weight:800;color:#704067}
-.from{margin-top:15px;font-weight:900;color:#ec4d9a}
-.shine{font-size:35px}
-@media(max-width:520px){.row{grid-template-columns:1fr}.card{padding:20px}.title{font-size:27px}}
+.gender{display:flex;gap:10px}.gender button{flex:1}
+.gender .on{outline:4px solid #ff9bc7}
+.gender .boy{background:linear-gradient(135deg,#80a9f6,#8175dd)}
+.pill{
+ display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border-radius:99px;
+ background:#fff9;border:1px solid #fff;margin-bottom:13px;font-size:12px;font-weight:800
+}
+.loading{text-align:center;padding:38px 15px}
+.loader{
+ width:66px;height:66px;border-radius:50%;border:7px solid #ffffff88;border-top-color:#ff4f9e;
+ margin:8px auto 18px;animation:spin 1s linear infinite
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.progress{height:8px;background:#ffffff9c;border-radius:99px;overflow:hidden;margin-top:20px}
+.progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,#ff4f9e,#9278ec);animation:load 1.8s forwards}
+@keyframes load{to{width:100%}}
+.link{
+ margin-top:15px;background:#edf3ffcc;border:1px solid #fff;border-radius:16px;
+ padding:13px;font-size:12px;word-break:break-all;color:#52607d
+}
+.copyrow{display:grid;grid-template-columns:1fr auto;gap:8px;margin-top:10px}
+.copyrow button{border-radius:16px;padding:13px 16px;background:#ff5aa5;color:#fff;font-weight:900}
+.copyrow .copylink{background:#fff;color:#7b5a86;border:1px solid #eee}
+.notice{text-align:center;font-size:12px;color:#785f7e;line-height:1.8;margin-top:11px}
+.share-art{text-align:center;font-size:88px;filter:drop-shadow(0 10px 15px #7b568533);animation:fly 4.8s ease-in-out infinite}
+.reveal{text-align:center}
+.gift{
+ width:155px;height:120px;margin:16px auto;position:relative;display:grid;place-items:center;
+ font-size:75px;cursor:pointer;animation:gift 1.7s ease-in-out infinite
+}
+@keyframes gift{50%{transform:translateY(-8px) rotate(2deg)}}
+.message{
+ background:#fffafebd;border:1px solid #fff;border-radius:23px;padding:20px;
+ font-size:21px;font-weight:900;line-height:1.9;color:#70435f;
+ box-shadow:inset 0 0 30px #ffb4d51f
+}
+.from{margin-top:14px;color:#ed4a99;font-weight:900}
+.revealActions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:15px}
+.revealActions button{padding:13px;border-radius:17px}
+.bottom{
+ display:flex;justify-content:center;gap:9px;margin-top:15px
+}
+.navdot{
+ border-radius:99px;padding:9px 13px;background:#ffffff62;color:#6b4c79;
+ border:1px solid #fff;font-size:12px;font-weight:800
+}
+.settings .setting{
+ background:#ffffff72;border:1px solid #fff;border-radius:19px;padding:15px;margin-top:10px
+}
+.colors{display:flex;gap:10px;margin-top:10px}
+.colors span{width:34px;height:34px;border-radius:50%;border:3px solid #fff;box-shadow:0 4px 12px #72516d22;cursor:pointer}
+.c1{background:#ff5aa5}.c2{background:#8d77e9}.c3{background:#65aaf4}.c4{background:#b8d9ff}.c5{background:#4d496e}
+.phrase{background:#fff9;border:1px solid #fff;border-radius:16px;padding:12px;margin-top:9px;font-size:13px}
+@media(max-width:470px){.card{padding:19px}.row{grid-template-columns:1fr}h1{font-size:27px}}
 </style>
 </head>
 <body>
-<div class="sky"><div class="cloud c1"></div><div class="cloud c2"></div></div>
+<div class="scene"></div>
 <div class="decor" id="decor"></div>
-<div class="float teddy" style="top:7%;right:4%">🧸</div>
-<div class="float teddy" style="top:72%;left:2%;animation-delay:-2s">🧸</div>
-<div class="float bird" style="top:20%;left:7%;animation-delay:-1s">🕊️</div>
-<div class="float bird" style="top:43%;right:6%;animation-delay:-3s">🐦</div>
-<div class="float gift" style="top:82%;right:9%;animation-delay:-4s">🎁</div>
-<div class="wrap">
-<section class="card" id="creator">
-  <div class="logo">💗🧸🕊️</div>
-  <div class="title">رسالة حلوة</div>
-  <div class="sub">ابعت كلمة حلوة لشخص بتحبه أو صاحبك وخليه يفتح مفاجأة صغيرة 🎁</div>
-  <label>اسمك 💕</label>
-  <input id="sender" placeholder="اكتب اسمك هنا">
-  <label>اسم الشخص اللي هتبعتله</label>
-  <input id="receiver" placeholder="اكتب اسمه هنا">
-  <label>الشخص ده...</label>
-  <div class="choice">
-    <button type="button" id="girl">🎀 بنت</button>
-    <button type="button" class="alt" id="boy">💙 ولد</button>
-  </div>
-  <button class="wide" id="make">🎁 اختارلي رسالة واعمل الرابط</button>
-  <div id="result" class="hidden">
-    <div class="linkbox" id="link"></div>
-    <button class="wide copy" id="copy">📋 نسخ الرابط</button>
-    <div class="small">كل مرة تعمل رابط جديد، الموقع يختار جملة جديدة ✨<br>نفس الرابط يفضل يحمل نفس الرسالة.</div>
-  </div>
-</section>
 
-<section class="card hidden" id="reveal">
-  <div class="shine">✨💗✨</div>
-  <h1 id="hello"></h1>
-  <div class="sub">في حد بعتلك حاجة حلوة جدًا...</div>
-  <div class="present" id="present">🎁</div>
-  <button class="wide" id="openGift">افتح المفاجأة 💝</button>
-  <div id="msg" class="hidden">
-    <div class="message" id="text"></div>
-    <div class="from" id="from"></div>
-    <div style="font-size:34px;margin-top:15px">🧸 🕊️ 🎀 🎁 💗</div>
+<div class="app">
+ <div class="top">
+  <div class="brand">💗 رسالة صغيرة</div>
+  <button class="iconbtn" onclick="show('settings')">☾</button>
+ </div>
+
+ <!-- HOME -->
+ <section class="screen active" id="home">
+  <div class="card">
+   <div class="hero">
+    <div class="hero-art">🧸 💗 🕊️</div>
+    <h1>رسالة من القلب</h1>
+    <div class="sub">اكتب اسمك واسم الشخص اللي تحب تبعته جملة حلوة،<br>وخلي السعادة توصله له 🎁</div>
+    <button class="primary" onclick="show('create')">هيا نبدأ 💗</button>
+   </div>
   </div>
-</section>
+  <div style="text-align:center;font-size:45px;margin-top:14px;filter:drop-shadow(0 8px 12px rgba(100,70,120,.15))">🧸 🎁 🕊️ 🌸</div>
+  <div class="bottom">
+   <button class="navdot" onclick="show('phrases')">💗 بعض من الجمل</button>
+   <button class="navdot" onclick="show('settings')">⚙️ الإعدادات</button>
+  </div>
+ </section>
+
+ <!-- CREATE -->
+ <section class="screen" id="create">
+  <div class="card">
+   <div class="pill">💗 2 / 2</div>
+   <h2>أدخل بياناتك 💗</h2>
+   <label>اسمك</label><input id="sender" placeholder="اكتب اسمك هنا">
+   <label>اسم الشخص اللي هتبعته</label><input id="receiver" placeholder="اكتب اسمه هنا">
+   <label>هو / هي</label>
+   <div class="gender">
+    <button class="primary on" id="girl">🎀 بنت</button>
+    <button class="primary boy" id="boy">💙 ولد</button>
+   </div>
+   <button class="primary" onclick="makeMessage()">✨ اخترلي جملة</button>
+  </div>
+ </section>
+
+ <!-- LOADING -->
+ <section class="screen" id="loading">
+  <div class="card loading">
+   <div class="share-art">🕊️</div>
+   <div class="loader"></div>
+   <h2>جاري اختيار جملة مميزة لك...</h2>
+   <div class="sub">بنستدعي شوية حُب من عندنا 💗</div>
+   <div class="progress"><i></i></div>
+  </div>
+ </section>
+
+ <!-- SHARE -->
+ <section class="screen" id="share">
+  <div class="card">
+   <div class="share-art">🎁</div>
+   <h2 style="text-align:center">رابط المشاركة</h2>
+   <div class="sub">انسخ الرابط وشاركه مع الشخص اللي تحبه</div>
+   <div class="link" id="shareLink"></div>
+   <div class="copyrow">
+    <button onclick="copyLink()">نسخ الرابط 📋</button>
+    <button class="copylink" onclick="shareNative()">مشاركة ↗</button>
+   </div>
+   <div class="notice">كل رابط جديد بيختار جملة جديدة 💗<br>والرابط نفسه يفضل بنفس الرسالة.</div>
+   <button class="primary secondary" onclick="show('create')">عمل رابط جديد ✨</button>
+  </div>
+ </section>
+
+ <!-- REVEAL -->
+ <section class="screen" id="reveal">
+  <div class="card reveal">
+   <div class="share-art">🧸 🕊️</div>
+   <h1 id="receiverHello">يا صديقي 💗</h1>
+   <div class="sub">في حد بعتلك رسالة حلوة...<br>عايز تعرف مين؟</div>
+   <div class="gift" id="gift">🎁</div>
+   <button class="primary" id="openBtn" onclick="openGift()">افتح المفاجأة 🎁</button>
+   <div id="revealed" class="hidden">
+    <div class="message" id="messageText"></div>
+    <div class="from" id="messageFrom"></div>
+    <div style="font-size:35px;margin-top:12px">💗 🎀 🕊️ 🧸</div>
+    <div class="revealActions">
+     <button class="primary secondary" onclick="show('home')">رسالة جديدة</button>
+     <button class="primary" onclick="navigator.share?navigator.share({title:'رسالة من القلب',text:messageText.textContent,url:location.href}):copyCurrent()">شاركها 💗</button>
+    </div>
+   </div>
+  </div>
+ </section>
+
+ <!-- PHRASES -->
+ <section class="screen" id="phrases">
+  <div class="card">
+   <h2>💗 بعض من الجمل</h2>
+   <div id="phraseList"></div>
+   <button class="primary secondary" onclick="show('home')">رجوع</button>
+  </div>
+ </section>
+
+ <!-- SETTINGS -->
+ <section class="screen settings" id="settings">
+  <div class="card">
+   <h2>⚙️ الإعدادات</h2>
+   <div class="setting"><b>لون الخلفية</b><div class="colors">
+    <span class="c1" onclick="setTheme('#ff4f9e','#8d76e8')"></span>
+    <span class="c2" onclick="setTheme('#8d76e8','#65aaf4')"></span>
+    <span class="c3" onclick="setTheme('#65aaf4','#ff79b7')"></span>
+    <span class="c4" onclick="setTheme('#78b8ff','#d29aff')"></span>
+    <span class="c5" onclick="setTheme('#565171','#a77cf0')"></span>
+   </div></div>
+   <div class="setting"><b>المظهر</b><p style="margin:8px 0 0;font-size:13px">واجهة ناعمة ومضيئة مع خلفية متحركة ودافئة.</p></div>
+   <div class="setting"><b>💗 الموسيقى</b><p style="margin:8px 0 0;font-size:13px">الموقع لا يشغل صوتًا تلقائيًا حتى لا يزعج الشخص.</p></div>
+   <button class="primary secondary" onclick="show('home')">رجوع</button>
+  </div>
+ </section>
 </div>
+
 <script>
 const girls=[
-"وجودك في الدنيا لوحده بيخليها ألطف وأجمل 💗",
-"إنتِ من الناس اللي مجرد وجودهم بيخلّي اليوم أحلى 🌷",
-"أتمنى دايمًا تفضلي شايفة قد إيه إنتِ مميزة وجميلة من جواكي 💕",
-"ضحكتك كفاية تغيّر مود يوم كامل 🎀",
-"إنتِ تستحقي كل حاجة حلوة تيجي في طريقك ✨",
-"خليكي دايمًا فخورة بنفسك، لأنك تستحقي ده فعلًا 💗",
-"فيكي حاجة لطيفة بتخلّي وجودك مختلف عن أي حد 🌸",
-"أتمنى أيامك الجاية تكون أجمل من كل اللي فات 🦋",
-"إنتِ شخص يستاهل يتقاله كلام حلو كل يوم 💝",
-"وجودك بيضيف للحياة لون أحلى 🌈",
-"ممكن متعرفيش، بس وجودك بيفرق مع ناس كتير جدًا 💕",
-"أتمنى قلبك يفضل دايمًا مليان راحة وفرحة 🌷",
-"إنتِ أجمل لما تكوني على طبيعتك، متنسيش ده أبدًا 🩷",
-"ربنا يرزقك أيامًا تشبه جمال قلبك ✨",
-"كل حاجة حلوة تليق بيكي، من غير استثناء 🎀",
-"أتمنى تلاقي دايمًا سبب يخليكي تبتسمي 💗",
-"إنتِ تستحقي كلمة حلوة، ودي واحدة منها: إنتِ مميزة جدًا 🌸",
-"خليكي متأكدة إن ليكي مكان جميل في قلوب ناس كتير 🕊️",
-"أتمنى كل أمنية حلوة في قلبك تلاقي طريقها ليكي 💝",
-"إنتِ واحدة من الحاجات اللطيفة اللي الدنيا محظوظة بوجودها 🌷",
-"مفيش أحلى من شخص حقيقي ولطيف زيك 💕",
-"أتمنى الدنيا تكون رقيقة معاكي على قد ما قلبك رقيق ✨",
-"لو اليوم كان صعب، افتكري إن بكرة ممكن يكون أجمل بكتير 🦋",
-"إنتِ تستحقي الفرح من غير سبب، والضحكة من غير مناسبة 💗",
-"ربنا يحفظ قلبك من أي حاجة تضايقه ويملأه فرحة 🌸"
+"إنتِ جميلة جدًا 💗",
+"إنتِ غالية عندي أوي 🎀",
+"مش هزعلك أبدًا 🥹💗",
+"وجودك بيفرق معايا كتير 🌸",
+"إنتِ من أحلى الناس اللي عرفتها 🦋",
+"بحب وجودك وضحكتك جدًا 💕",
+"إنتِ تستاهلي كل حاجة حلوة 🎁",
+"مبسوطة إنك في حياتي 💗",
+"خليكي دايمًا مبتسمة عشان ضحكتك حلوة 🌷",
+"إنتِ شخص مميز ومش شبه حد ✨"
 ];
 const boys=[
-"وجودك في حياة اللي حواليك بيفرق أكتر مما تتخيل 💙",
-"إنت شخص يستاهل كل كلمة حلوة تتقال عنه ✨",
-"أتمنى أيامك الجاية تكون مليانة نجاح وفرحة وراحة بال 💙",
-"خليك دايمًا فخور بنفسك وباللي بتعمله، إنت تستاهل 👏",
-"فيك حاجة مميزة بتخلي وجودك مختلف عن أي حد 🌟",
-"أتمنى كل خطوة جاية في حياتك تقربك من اللي نفسك فيه 💙",
-"وجودك بيخلّي الدنيا ألطف بكتير مما تتخيل 🕊️",
-"مهما كان يومك، افتكر إنك قادر تعدّي أي حاجة وتكمل ✨",
-"إنت من الناس اللي تستحق تسمع كلام حلو أكتر 💙",
-"أتمنى النجاح يفضل ماشي معاك في كل خطوة 🌟",
-"خليك زي ما إنت، لأن شخصيتك الحقيقية هي أحلى حاجة فيك 💙",
-"أتمنى تلاقي دايمًا ناس تقدر قيمتك بجد 🫶",
-"إنت تستحق أيامًا جميلة تليق بتعبك ومجهودك ✨",
-"ربنا يوفقك في كل حاجة نفسك تحققها 💙",
-"في ناس وجودها بيعمل فرق، وإنت واحد منهم 🌟",
-"أتمنى كل حلم عندك يتحول يومًا لحقيقة 💙",
-"افتكر دايمًا إنك أقوى وأقدر مما تتخيل 💪",
-"أتمنى كل اللي جاي يكون أهدى وأجمل ليك 🕊️",
-"وجودك له قيمة، حتى في الأيام اللي مش حاسس فيها بده 💙",
-"ربنا يكتبلك فرحة كبيرة على قد قلبك ✨",
-"إنت تستحق إنك تفتخر بنفسك وبطريقك 🌟",
-"أتمنى الدنيا تديك على قد تعبك وأكثر 💙",
-"خليك مكمل، يمكن أجمل حاجة في حياتك لسه جاية 🎁",
-"كل نجاح صغير بتعمله يستحق إنك تفرح بيه 👏",
-"أتمنى السنة الجاية تكون بداية لحاجات عظيمة في حياتك 💙"
+"إنت جميل جدًا 💙",
+"إنت غالي عندي أوي 💙",
+"مش هزعلك أبدًا 🥹💙",
+"وجودك بيفرق معايا كتير ⭐",
+"إنت من أحلى الناس اللي عرفتها 🕊️",
+"بحب وجودك وضحكتك جدًا 💙",
+"إنت تستاهل كل حاجة حلوة 🎁",
+"مبسوط إنك في حياتي 💙",
+"خليك دايمًا مبتسم عشان ضحكتك حلوة ✨",
+"إنت شخص مميز ومش شبه حد 🌟"
 ];
-let gender="girl";
-girl.onclick=()=>{gender="girl";girl.style.outline="4px solid #ff9aca";boy.style.outline="none"};
-boy.onclick=()=>{gender="boy";boy.style.outline="4px solid #a9baff";girl.style.outline="none"};
-function enc(x){return btoa(unescape(encodeURIComponent(x)));}
-function dec(x){return decodeURIComponent(escape(atob(x)));}
-function build(){
- const s=sender.value.trim(), r=receiver.value.trim();
- if(!s||!r){alert("اكتب اسمك واسم الشخص الأول 💗");return}
- const arr=gender==="girl"?girls:boys;
- const phrase=arr[Math.floor(Math.random()*arr.length)];
- const data=enc(JSON.stringify({s,r,g:gender,p:phrase}));
- const url=location.href.split("#")[0]+"#m="+data;
- link.textContent=url; result.classList.remove("hidden");
- history.replaceState(null,"", "#m="+data);
+
+let gender='girl', chosen=null;
+const $=id=>document.getElementById(id);
+function show(id){
+ document.querySelectorAll('.screen').forEach(x=>x.classList.remove('active'));
+ $(id).classList.add('active');
+ window.scrollTo({top:0,behavior:'smooth'});
 }
-make.onclick=build;
-copy.onclick=async()=>{try{await navigator.clipboard.writeText(link.textContent);copy.textContent="✅ اتنسخ الرابط";setTimeout(()=>copy.textContent="📋 نسخ الرابط",1800)}catch(e){prompt("انسخ الرابط:",link.textContent)}};
-function openMessage(){
- const raw=location.hash.startsWith("#m=")?location.hash.slice(3):null;
- if(!raw)return;
+$('girl').onclick=()=>{gender='girl';$('girl').classList.add('on');$('boy').classList.remove('on')};
+$('boy').onclick=()=>{gender='boy';$('boy').classList.add('on');$('girl').classList.remove('on')};
+
+function b64(s){return btoa(unescape(encodeURIComponent(s)))}
+function unb64(s){return decodeURIComponent(escape(atob(s)))}
+
+function makeMessage(){
+ const s=$('sender').value.trim(), r=$('receiver').value.trim();
+ if(!s||!r){alert('اكتب اسمك واسم الشخص اللي هتبعته 💗');return}
+ const arr=gender==='girl'?girls:boys;
+ chosen=arr[Math.floor(Math.random()*arr.length)];
+ const payload={s,r,g:gender,p:chosen};
+ const token=b64(JSON.stringify(payload));
+ const url=location.href.split('#')[0]+'#m='+token;
+ $('shareLink').textContent=url;
+ show('loading');
+ setTimeout(()=>show('share'),1900);
+ history.replaceState(null,'','#m='+token);
+}
+async function copyLink(){
+ try{await navigator.clipboard.writeText($('shareLink').textContent);alert('اتنسخ الرابط 💗')}
+ catch(e){prompt('انسخ الرابط:', $('shareLink').textContent)}
+}
+function copyCurrent(){
+ navigator.clipboard?.writeText(location.href);
+}
+async function shareNative(){
+ if(navigator.share) await navigator.share({title:'رسالة من القلب 💗',text:'في حد بعتلك رسالة حلوة 🎁',url:$('shareLink').textContent});
+ else copyLink();
+}
+function openGift(){
+ $('gift').style.display='none';$('openBtn').style.display='none';$('revealed').classList.remove('hidden');
+}
+function loadMessage(){
+ if(!location.hash.startsWith('#m='))return;
  try{
-  const d=JSON.parse(dec(raw)); creator.classList.add("hidden"); reveal.classList.remove("hidden");
-  hello.textContent=`يا ${d.r} 💗`;
-  text.textContent=d.p;
-  from.textContent=`من ${d.s} 🕊️`;
- }catch(e){}
+  const d=JSON.parse(unb64(location.hash.slice(3)));
+  $('receiverHello').textContent='يا '+d.r+' 💗';
+  $('messageText').textContent=d.p;
+  $('messageFrom').textContent='من '+d.s+' 🕊️';
+  show('reveal');
+ }catch(e){show('home')}
 }
-openGift.onclick=()=>{msg.classList.remove("hidden");present.style.display="none";openGift.style.display="none"};
-present.onclick=()=>openGift.click();
-const icons=["🩷","💗","🎀","✨","🌸","🦋","🕊️","💜"];
-for(let i=0;i<45;i++){const e=document.createElement("span");e.className="spark";e.textContent=icons[Math.floor(Math.random()*icons.length)];e.style.left=Math.random()*100+"%";e.style.top=Math.random()*100+"%";e.style.fontSize=(12+Math.random()*18)+"px";e.style.animationDuration=(7+Math.random()*12)+"s";e.style.animationDelay=(-Math.random()*15)+"s";decor.appendChild(e)}
-openMessage();
+function setTheme(a,b){
+ document.documentElement.style.setProperty('--pink',a);
+ document.documentElement.style.setProperty('--purple',b);
+}
+const list=[...girls,...boys];
+$('phraseList').innerHTML=list.map(x=>`<div class="phrase">💗 ${x}</div>`).join('');
+
+const icons=['🩷','💗','🎀','✨','🌸','🦋','🕊️','💜','🌷'];
+for(let i=0;i<48;i++){
+ const e=document.createElement('span');e.className='petal';e.textContent=icons[Math.floor(Math.random()*icons.length)];
+ e.style.left=Math.random()*100+'%';e.style.top=Math.random()*100+'%';
+ e.style.fontSize=(11+Math.random()*17)+'px';
+ e.style.animationDuration=(8+Math.random()*12)+'s';
+ e.style.animationDelay=(-Math.random()*16)+'s';
+ $('decor').appendChild(e);
+}
+loadMessage();
 </script>
 </body>
 </html>
